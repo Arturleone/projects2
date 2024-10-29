@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val textView7 = findViewById<TextView>(R.id.textView7)
         val textView6 = findViewById<TextView>(R.id.textView6)
-        
+
         val userName = intent.getStringExtra("username")
         val email = intent.getStringExtra("email")
         val text = findViewById<TextView>(R.id.textView5)
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             else -> "Boa noite"
         }
 
-        val userName = "Usuário" // Substitua pelo nome do usuário real
+        val userName = "Usuário"
         return greeting
     }
 
