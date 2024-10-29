@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
             if (verificarConta(inputUsername, inputPassword) || inputUsername == "admin" && inputPassword == "1q2w3e") {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("username", inputUsername)
-                val email = sharedPreferences.getString("password", null)
+                val email = sharedPreferences.getString("email", null)
                 intent.putExtra("email", email)
                 startActivity(intent)
             } else {

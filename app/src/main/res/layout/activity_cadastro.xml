@@ -23,7 +23,8 @@
                 android:layout_margin="15dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/backicon" />
+                app:srcCompat="@drawable/backicon"
+                />
 
             <TextView
                 android:id="@+id/textView2"
@@ -35,7 +36,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/verdeCiano"
+                android:fontFamily="@font/montbold"
+                />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -135,7 +139,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
-                app:layout_constraintVertical_bias="0.149" />
+                app:layout_constraintVertical_bias="0.149"
+                android:backgroundTint="@color/verdeCiano"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

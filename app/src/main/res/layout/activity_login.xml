@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    >
 
         <ScrollView
             android:layout_width="match_parent"
@@ -26,6 +27,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView"
                     app:boxBackgroundMode="outline"
+
                     >
 
                     <EditText
@@ -49,6 +51,7 @@
                     app:passwordToggleEnabled="true"
                     tools:ignore="MissingConstraints"
                     app:boxBackgroundMode="outline"
+
                     >
 
                     <EditText
@@ -72,7 +75,10 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
                     app:layout_constraintVertical_bias="1.0"
-                    tools:ignore="MissingConstraints" />
+                    tools:ignore="MissingConstraints"
+
+                    android:backgroundTint="@color/verdeCiano"
+                    />
 
                 <Button
                     android:id="@+id/cadastrar_login"
@@ -85,20 +91,25 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="50dp"
                     android:layout_marginBottom="40dp"
+                    android:backgroundTint="@color/verdeCiano"
                     />
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="LOGIN"
+                    android:text="ACESSAR"
                     android:textSize="30dp"
                     app:layout_constraintBottom_toBottomOf="@+id/cadastrar_login"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.326" />
+                    app:layout_constraintVertical_bias="0.326"
+                    android:fontFamily="@font/montbold"
+                    android:textColor="@color/verdeCiano"
+                    />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
