@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         textView6.text = userName
 
         textView7.text = email
-        startCountdown(3700000)
+        startCountdown(3700000) //inserir milisegundos desejados
     }
 
     //função para o "Onclick" do imageview
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             else -> "Boa noite"
         }
 
-        val userName = "Usuário"
+        val userName = "Usuário" //name do usuário
         return greeting
     }
 

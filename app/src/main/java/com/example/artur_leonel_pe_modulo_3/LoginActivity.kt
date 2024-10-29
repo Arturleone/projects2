@@ -76,9 +76,13 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
+    //Mensagem toast para o usuario
     private fun messageShowBlock(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+
+    //Verificar Conta
     private fun verificarConta (usuario: String, senha: String):Boolean {
         val sharedPreferences: SharedPreferences = getSharedPreferences("PREFS", MODE_PRIVATE)
         val usuario2 = sharedPreferences.getString("username", null)
