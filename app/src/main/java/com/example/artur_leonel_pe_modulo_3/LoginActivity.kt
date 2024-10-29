@@ -19,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
+        val sharedPreferences: SharedPreferences = getSharedPreferences("PREFS", MODE_PRIVATE)
         val botaoAcessar = findViewById<Button>(R.id.acessar_login)
         val botaoCadastro = findViewById<Button>(R.id.cadastrar_login)
         val userName = findViewById<EditText>(R.id.username_acessar)
@@ -37,6 +38,8 @@ class LoginActivity : AppCompatActivity() {
             if (verificarConta(inputUsername, inputPassword) || inputUsername == "admin" && inputPassword == "1q2w3e") {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("username", inputUsername)
+                val email = sharedPreferences.getString("password", null)
+                intent.putExtra("email", email)
                 startActivity(intent)
             } else {
                 messageShowBlock("Dados Incorretos!!")

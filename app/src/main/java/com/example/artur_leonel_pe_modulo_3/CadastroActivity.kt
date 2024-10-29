@@ -43,7 +43,7 @@ class CadastroActivity : AppCompatActivity() {
             } else if (!validarSenha(inputPassword)) {
             messageShowBlock("A senha é necessária no mínimo 8 caracteres, no mínimo dois números, uma letra maiuscula e uma letra minuscula.\n")
             } else {
-                adicionarUser(inputNameFull, inputPassword)
+                adicionarUser(inputNameFull, inputPassword, inputEmail)
                 messageShowBlock("Cadastro Realizado Com Sucesso!")
                 startActivity(Intent(this, LoginActivity::class.java))
             }
@@ -85,11 +85,12 @@ class CadastroActivity : AppCompatActivity() {
         return password != confirmPassword
     }
     //Adicionar ao SharedPreferences
-    private fun adicionarUser(userName: String, password: String) {
+    private fun adicionarUser(userName: String, password: String, email: String) {
         val sharedPreferences: SharedPreferences = getSharedPreferences("PREFS", MODE_PRIVATE)
         val userApp = sharedPreferences.edit()
         userApp.putString("username", userName)
         userApp.putString("password", password)
+        userApp.putString("email", email)
         userApp.apply()
     }
 }
