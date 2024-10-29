@@ -8,4 +8,5 @@
     <color name="verdeEscuro">#62C285</color>
     <color name="verdeCiano">#3EB1B1</color>
     <color name="transparent">#00000000</color>
+    <color name="red">#FF0000</color>
 </resources>
