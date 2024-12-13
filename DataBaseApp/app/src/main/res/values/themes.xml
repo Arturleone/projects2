@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DataBaseApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#000000</item>
+        <item name="colorSecondary">#FFFFFF</item>
+        <item name="colorTertiary">#FFFFFF</item>
+    </style>
+
+    <style name="Theme.DataBaseApp" parent="Base.Theme.DataBaseApp" />
+</resources>

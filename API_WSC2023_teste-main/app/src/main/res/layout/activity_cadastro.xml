@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/activity_cadastro.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/etSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/etDr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DR" />
+
+    <EditText
+        android:id="@+id/etTipoUsuarioId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo Usuário (1 ou 2)" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar" />
+
+    <Button
+        android:id="@+id/btnVoltarLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar ao Login" />
+
+</LinearLayout>

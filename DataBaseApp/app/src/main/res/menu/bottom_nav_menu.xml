@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/shared_preferences"
+        android:title="Shared Preferences"
+        android:icon="@drawable/baseline_folder_shared_24"
+        />
+
+    <item
+        android:id="@+id/room_database"
+        android:title="Room Database"
+        android:icon="@drawable/baseline_meeting_room_24"
+        />
+
+    <item
+        android:id="@+id/data_store"
+        android:title="Data Store"
+        android:icon="@drawable/baseline_local_grocery_store_24"
+        />
+</menu>
