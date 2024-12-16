@@ -49,4 +49,6 @@ dependencies {
     implementation ("com.google.android.gms:play-services-location:18.0.0")
     implementation ("com.google.maps:google-maps-services:0.18.0")
     implementation ("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation ("com.google.android.libraries.places:places:2.7.0")
+    implementation ("com.google.maps.android:android-maps-utils:2.3.0")
 }

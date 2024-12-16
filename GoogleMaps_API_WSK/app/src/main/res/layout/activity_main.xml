@@ -2,42 +2,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- EditText para o local de origem -->
-    <EditText
-        android:id="@+id/startLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Origem"
-        android:padding="16dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"/>
-
-    <!-- EditText para o local de destino -->
-    <EditText
-        android:id="@+id/endLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Destino"
-        android:padding="16dp"
-        android:layout_below="@id/startLocation"
-        android:layout_marginTop="16dp"/>
-
-    <!-- Botão para buscar a rota -->
-    <Button
-        android:id="@+id/routeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buscar Rota"
-        android:layout_below="@id/endLocation"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
-
-    <!-- Fragmento do mapa -->
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/routeButton"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_alignParentTop="true"
+        android:background="#AAFFFFFF">
+
+        <EditText
+            android:id="@+id/origin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite o ponto de origem" />
+
+        <EditText
+            android:id="@+id/destination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite o destino" />
+
+        <Button
+            android:id="@+id/btnRoute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Traçar Rota" />
+    </LinearLayout>
+
 </RelativeLayout>
