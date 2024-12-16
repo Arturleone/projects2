@@ -5,10 +5,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.content.SharedPreferences
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,11 +47,28 @@ class CadastroActivity : AppCompatActivity() {
             } else if (!validarSenha(inputPassword)) {
             messageShowBlock("A senha é necessária no mínimo 8 caracteres, no mínimo dois números, uma letra maiuscula e uma letra minuscula.\n")
             } else {
-                adicionarUser(inputNameFull, inputPassword, inputEmail)
-                messageShowBlock("Cadastro Realizado Com Sucesso!")
+                val usuario = Usuario(inputNameFull, inputEmail, inputPassword, "MG", 1)
+                cadastrarUsuario(usuario)
                 startActivity(Intent(this, LoginActivity::class.java))
             }
         }
+    }
+
+    private fun cadastrarUsuario(usuario: Usuario) {
+        RetrofitClient.usuarioApi.cadastrarUsuario(usuario).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(this@CadastroActivity, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this@CadastroActivity, "Erro no cadastro: ${response.code()} ${response.message()}", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                Toast.makeText(this@CadastroActivity, "Erro na comunicação com a API: ${t.message}", Toast.LENGTH_LONG).show()
+                Log.e("CadastroActivity", "Erro na comunicação: ${t.message}", t)
+            }
+        })
     }
 
     fun validarEmail(email: String): Boolean {
@@ -85,12 +106,4 @@ class CadastroActivity : AppCompatActivity() {
         return password != confirmPassword
     }
     //Adicionar ao SharedPreferences
-    private fun adicionarUser(userName: String, password: String, email: String) {
-        val sharedPreferences: SharedPreferences = getSharedPreferences("PREFS", MODE_PRIVATE)
-        val userApp = sharedPreferences.edit()
-        userApp.putString("username", userName)
-        userApp.putString("password", password)
-        userApp.putString("email", email)
-        userApp.apply()
-    }
 }
